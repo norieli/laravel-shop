@@ -223,7 +223,7 @@ return [
          * or specific method to path like: get:admin/auth/logs.
          */
         'except' => [
-            env('ADMIN_ROUTE_PREFIX', 'admin').'/auth/logs*',
+            env('ADMIN_ROUTE_PREFIX', 'admin') . '/auth/logs*',
         ],
     ],
 
@@ -348,9 +348,7 @@ return [
     'minify_assets' => [
 
         // Assets will not be minified.
-        'excepts' => [
-
-        ],
+        'excepts' => [],
 
     ],
 
@@ -405,6 +403,13 @@ return [
     |
     */
     'extensions' => [
+        'wang-editor' => [
 
+            // 如果要关掉这个扩展，设置为false
+            'enable' => true,
+
+            // 编辑器的配置
+            'config' => []
+        ]
     ],
 ];
