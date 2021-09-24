@@ -10,12 +10,14 @@
     "require": {
         "php": ">=7.0.0",
         "encore/laravel-admin": "~1.5",
+        "endroid/qr-code": "^3.9",
         "fideloper/proxy": "~3.3",
         "laravel-admin-ext/wang-editor": "1.*",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "overtrue/laravel-lang": "~3.0",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "yansongda/pay": "~2.6.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

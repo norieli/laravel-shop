@@ -21,6 +21,10 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             RegisteredListener::class,
         ],
+        OrderPaid::class => [
+            UpdateProductSoldCount::class,
+            SendOrderPaidMail::class,
+        ],
     ];
 
     /**
