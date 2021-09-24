@@ -15,4 +15,7 @@ Route::group([
     // $router->get('users', 'UsersController@index');
     $router->resource('users', UserController::class);
     $router->resource('products', ProductsController::class);
+    $router->resource('orders', OrdersController::class);
+    $router->post('orders/{order}/ship', 'OrdersController@ship')->name('orders.ship');
+
 });
