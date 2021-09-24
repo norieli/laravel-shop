@@ -9,6 +9,7 @@ use App\Models\ProductSku;
 use App\Models\UserAddress;
 use App\Models\Order;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class OrdersController extends Controller
 {
@@ -66,7 +67,25 @@ class OrdersController extends Controller
         });
 
         $this->dispatch(new CloseOrder($order, config('app.order_ttl')));
-        
+
         return $order;
+    }
+
+    public function index(Request $request)
+    {
+        $orders = Order::query()
+            // 使用 with 方法预加载，避免N + 1问题
+            ->with(['items.product', 'items.productSku'])
+            ->where('user_id', $request->user()->id)
+            ->orderBy('created_at', 'desc')
+            ->paginate();
+
+        return view('orders.index', ['orders' => $orders]);
+    }
+
+    public function show(Order $order, Request $request)
+    {
+        $this->authorize('own', $order);
+        return view('orders.show', ['order' => $order->load(['items.productSku', 'items.product'])]);
     }
 }
