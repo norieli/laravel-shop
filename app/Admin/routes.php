@@ -21,4 +21,5 @@ Route::group([
     $router->resource('coupon-codes', CouponCodesController::class);
     $router->resource('categories', CategoriesController::class);
     $router->get('api/categories', 'CategoriesController@apiIndex');
+    $router->resource('crowdfunding_products', CrowdfundingProductsController::class);
 });
