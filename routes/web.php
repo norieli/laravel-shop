@@ -51,6 +51,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('payment/{order}/wechat', 'PaymentController@payByWechat')->name('payment.wechat');
 
         Route::get('payment/alipay/return', 'PaymentController@alipayReturn')->name('payment.alipay.return');
+        Route::post('payment/{order}/installment', 'PaymentController@payByInstallment')->name('payment.installment');
 
         Route::get('orders/{order}/review', 'OrdersController@review')->name('orders.review.show');
         Route::post('orders/{order}/review', 'OrdersController@sendReview')->name('orders.review.store');
@@ -58,6 +59,13 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('crowdfunding_orders', 'OrdersController@crowdfunding')->name('crowdfunding_orders.store');
 
         Route::get('coupon_codes/{code}', 'CouponCodesController@show')->name('coupon_codes.show');
+
+        Route::get('installments', 'InstallmentsController@index')->name('installments.index');
+        Route::get('installments/{installment}', 'InstallmentsController@show')->name('installments.show');
+        Route::get('installments/{installment}/alipay', 'InstallmentsController@payByAlipay')->name('installments.alipay');
+        Route::get('installments/alipay/return', 'InstallmentsController@alipayReturn')->name('installments.alipay.return');
+        Route::get('installments/{installment}/wechat', 'InstallmentsController@payByWechat')->name('installments.wechat');
+    
 
         
     });
@@ -74,3 +82,5 @@ Route::get('alipay', function() {
 Route::post('payment/alipay/notify', 'PaymentController@alipayNotify')->name('payment.alipay.notify');
 Route::post('payment/wechat/notify', 'PaymentController@wechatNotify')->name('payment.wechat.notify');
 Route::post('payment/wechat/refund_notify', 'PaymentController@wechatRefundNotify')->name('payment.wechat.refund_notify');
+Route::post('installments/alipay/notify', 'InstallmentsController@alipayNotify')->name('installments.alipay.notify');
+Route::post('installments/wechat/notify', 'InstallmentsController@wechatNotify')->name('installments.wechat.notify');
