@@ -23,9 +23,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/email_verification/verify', 'EmailVerificationController@verify')->name('email_verification.verify');
     // 开始
     Route::group(['middleware' => 'email_verified'], function () {
-        Route::get('/test', function () {
-            return 'Your email is verified';
-        });
+        // Route::get('/test', function () {
+        //     return 'Your email is verified';
+        // });
         Route::get('user_addresses', 'UserAddressesController@index')->name('user_addresses.index');
         Route::get('user_addresses/create', 'UserAddressesController@create')->name('user_addresses.create');
         Route::post('user_addresses', 'UserAddressesController@store')->name('user_addresses.store');
@@ -72,13 +72,13 @@ Route::group(['middleware' => 'auth'], function () {
     // 结束
 });
 Route::get('products/{product}', 'ProductsController@show')->name('products.show');
-Route::get('alipay', function() {
-    return app('alipay')->web([
-        'out_trade_no' => time(),
-        'total_amount' => '1',
-        'subject' => 'test subject - 测试',
-    ]);
-});
+// Route::get('alipay', function() {
+//     return app('alipay')->web([
+//         'out_trade_no' => time(),
+//         'total_amount' => '1',
+//         'subject' => 'test subject - 测试',
+//     ]);
+// });
 Route::post('payment/alipay/notify', 'PaymentController@alipayNotify')->name('payment.alipay.notify');
 Route::post('payment/wechat/notify', 'PaymentController@wechatNotify')->name('payment.wechat.notify');
 Route::post('payment/wechat/refund_notify', 'PaymentController@wechatRefundNotify')->name('payment.wechat.refund_notify');
