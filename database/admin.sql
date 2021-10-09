@@ -21,7 +21,7 @@
 
 LOCK TABLES `admin_menu` WRITE;
 /*!40000 ALTER TABLE `admin_menu` DISABLE KEYS */;
-INSERT INTO `admin_menu` VALUES (1,0,1,'Dashboard','fa-bar-chart','/',NULL,NULL,NULL),(2,0,2,'Admin','fa-tasks','',NULL,NULL,NULL),(3,2,3,'Users','fa-users','auth/users',NULL,NULL,NULL),(4,2,4,'Roles','fa-user','auth/roles',NULL,NULL,NULL),(5,2,5,'Permission','fa-ban','auth/permissions',NULL,NULL,NULL),(6,2,6,'Menu','fa-bars','auth/menu',NULL,NULL,NULL),(7,2,7,'Operation log','fa-history','auth/logs',NULL,NULL,NULL),(8,0,0,'用户管理','fa-users','/users',NULL,'2021-09-22 07:35:08','2021-09-22 07:35:08'),(9,0,0,'商品管理','fa-cubes','/products',NULL,'2021-09-22 08:53:14','2021-09-22 08:53:14'),(10,0,0,'订单管理','fa-rmb','/orders',NULL,'2021-09-24 06:40:37','2021-09-24 06:40:37'),(11,0,0,'优惠券','fa-tags','coupon-codes',NULL,'2021-09-26 04:06:16','2021-09-26 04:07:05'),(12,0,0,'分类管理','fa-bars','/categories',NULL,'2021-09-27 02:32:34','2021-09-27 02:32:34');
+INSERT INTO `admin_menu` VALUES (1,0,1,'Dashboard','fa-bar-chart','/',NULL,NULL,NULL),(2,0,2,'Admin','fa-tasks','',NULL,NULL,NULL),(3,2,3,'Users','fa-users','auth/users',NULL,NULL,NULL),(4,2,4,'Roles','fa-user','auth/roles',NULL,NULL,NULL),(5,2,5,'Permission','fa-ban','auth/permissions',NULL,NULL,NULL),(6,2,6,'Menu','fa-bars','auth/menu',NULL,NULL,NULL),(7,2,7,'Operation log','fa-history','auth/logs',NULL,NULL,NULL),(8,0,0,'用户管理','fa-users','/users',NULL,'2021-09-22 07:35:08','2021-09-22 07:35:08'),(9,0,0,'商品管理','fa-cubes','/products',NULL,'2021-09-22 08:53:14','2021-09-22 08:53:14'),(10,0,0,'订单管理','fa-rmb','/orders',NULL,'2021-09-24 06:40:37','2021-09-24 06:40:37'),(11,0,0,'优惠券','fa-tags','coupon-codes',NULL,'2021-09-26 04:06:16','2021-09-26 04:07:05'),(12,0,0,'分类管理','fa-bars','/categories',NULL,'2021-09-27 02:32:34','2021-09-27 02:32:34'),(13,9,0,'众筹管理','fa-envira','/crowdfunding_products',NULL,'2021-09-27 07:36:56','2021-09-27 07:38:58'),(14,9,0,'普通商品','fa-apple','/products',NULL,'2021-09-27 07:42:37','2021-09-27 07:42:37'),(15,9,0,'秒杀','fa-500px','/seckill_products',NULL,'2021-10-09 01:48:18','2021-10-09 01:48:18');
 /*!40000 ALTER TABLE `admin_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,4 +103,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-27  2:51:21
+-- Dump completed on 2021-10-09  1:54:49
